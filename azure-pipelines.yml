@@ -1,0 +1,14 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- 
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '''SQL-Server-Creation'''
+    backendAzureRmResourceGroupName: 'juancito'
